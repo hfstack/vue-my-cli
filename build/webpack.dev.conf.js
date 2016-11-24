@@ -33,9 +33,8 @@ for (var page in pages) {
     template: pages[page],
     inject: true,
     excludeChunks: Object.keys(pages).filter(item => {
-      return (item != page)
+      return item !== page
     })
   }
-  console.log(conf);
   module.exports.plugins.push(new HtmlWebpackPlugin(conf))
 }

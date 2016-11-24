@@ -8,12 +8,11 @@ Vue.use(VueRouter)
 Vue.use(VueResource)
 
 const router = new VueRouter({
-  mode: 'history',
   routes: [
     {
       path: '/',
-      component: function (resolve) {
-        require(['./pages/Hello.vue'], resolve)
+      component: function () {
+        require('./pages/demo.vue')
       }
     }
 
@@ -21,6 +20,7 @@ const router = new VueRouter({
 })
 
 new Vue({
+  template: '<App/>',
   router,
   render: h => h(App)
 }).$mount('#app-container')
